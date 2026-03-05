@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1257</width>
+    <height>904</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>人脸识别系统</string>
+  </property>
+  <property name="styleSheet">
+   <string>
+/* 主窗口 */
+QWidget#Form {
+    background-color: #f8f9fa;
+}
+
+/* 标题 */
+QLabel#label_10 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* 普通文字 */
+QLabel {
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+/* 分组框 */
+QGroupBox {
+    font-size: 15px;
+    font-weight: bold;
+    color: #2c3e50;
+    border: 1px solid #dce6f0;
+    border-radius: 10px;
+    margin-top: 12px;
+    background-color: #ffffff;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 8px;
+    padding: 0 8px;
+}
+
+/* 按钮 */
+QPushButton {
+    background-color: #409eff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+QPushButton:hover {
+    background-color: #66b1ff;
+}
+QPushButton:pressed {
+    background-color: #337ecc;
+}
+
+/* 输入框 */
+QLineEdit, QPlainTextEdit {
+    background-color: #ffffff;
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 14px;
+    color: #2c3e50;
+}
+QLineEdit:focus, QPlainTextEdit:focus {
+    border: 1px solid #409eff;
+}
+
+/* 单选框 */
+QRadioButton {
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+/* 表格 */
+QTableView {
+    background-color: white;
+    border: 1px solid #dce6f0;
+    border-radius: 8px;
+    gridline-color: #e4e7ed;
+}
+QHeaderView::section {
+    background-color: #e8f3ff;
+    color: #2c3e50;
+    border: none;
+    padding: 6px;
+}
+
+/* 图片展示框 */
+QLabel#label_3, QLabel#label_8, QLabel#label_11 {
+    background-color: #ffffff;
+    border: 1px dashed #c0c4cc;
+    border-radius: 8px;
+}
+
+/* 面板 */
+QFrame {
+    background-color: #ffffff;
+    border: 1px solid #e4e7ed;
+    border-radius: 10px;
+}
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_30">
+   <property name="spacing">
+    <number>12</number>
+   </property>
+   <property name="contentsMargins" stdset="0">
+    <rect>
+     <x>16</x>
+     <y>16</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <item>
+    <widget class="QLabel" name="label_10">
+     <property name="minimumSize">
+      <size>
+       <width>52</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>人脸识别系统</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>12</number>
+     </property>
+     <item>
+      <widget class="QGroupBox" name="groupBox_9">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="title">
+        <string>功能选项</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_22">
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <property name="contentsMargins" stdset="0">
+         <rect>
+          <x>16</x>
+          <y>16</y>
+          <width>16</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <item>
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="text">
+           <string>人脸录入</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="text">
+           <string>人脸识别</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="text">
+           <string>数据库管理</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>退出</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <widget class="QWidget" name="page_8">
+        <layout class="QVBoxLayout">
+         <property name="spacing">
+          <number>12</number>
+         </property>
+         <property name="contentsMargins" stdset="0">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>0</width>
+           <height>0</height>
+          </rect>
+         </property>
+         <item>
+          <widget class="QGroupBox" name="groupBox_10">
+           <property name="title">
+            <string>人脸信息录入</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <property name="spacing">
+             <number>16</number>
+            </property>
+            <property name="contentsMargins" stdset="0">
+             <rect>
+              <x>16</x>
+              <y>16</y>
+              <width>16</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_23">
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="minimumSize">
+                 <size>
+                  <width>360</width>
+                  <height>280</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap>C:/Users/liu/Pictures/F7A1EDA62C651FF02CC757D404774CC6.png</pixmap>
+                </property>
+                <property name="scaledContents">
+                 <bool>false</bool>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>方式一：图片</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <item>
+                 <widget class="QPushButton" name="pushButton_5">
+                  <property name="text">
+                   <string>上传图片</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="lineEdit"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>方式二：摄像头</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <widget class="QPushButton" name="pushButton_8">
+                  <property name="text">
+                   <string>拍照</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_6">
+                  <property name="text">
+                   <string>开启摄像头</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_7">
+                  <property name="text">
+                   <string>关闭摄像头</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame_5">
+              <property name="minimumSize">
+               <size>
+                <width>320</width>
+                <height>0</height>
+               </size>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_29">
+               <property name="spacing">
+                <number>12</number>
+               </property>
+               <property name="contentsMargins" stdset="0">
+                <rect>
+                 <x>20</x>
+                 <y>20</y>
+                 <width>20</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_9">
+                 <property name="text">
+                  <string>人脸信息</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_8">
+                 <property name="minimumSize">
+                  <size>
+                   <width>120</width>
+                   <height>120</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap>C:/Users/liu/Pictures/F7A1EDA62C651FF02CC757D404774CC6.png</pixmap>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>true</bool>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QFormLayout" name="formLayout_2">
+                 <property name="horizontalSpacing">
+                  <number>16</number>
+                 </property>
+                 <property name="verticalSpacing">
+                  <number>12</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_4">
+                   <property name="text">
+                    <string>姓名</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="lineEdit_3"/>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="label_6">
+                   <property name="text">
+                    <string>年龄</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="lineEdit_2"/>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="label_5">
+                   <property name="text">
+                    <string>学号</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QLineEdit" name="lineEdit_4"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                 <item>
+                  <widget class="QLabel" name="label_7">
+                   <property name="text">
+                    <string>性别</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="radioButton_2">
+                   <property name="text">
+                    <string>男</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="radioButton">
+                   <property name="text">
+                    <string>女</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_9">
+                 <property name="text">
+                  <string>保存信息</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_9">
+        <layout class="QVBoxLayout">
+         <property name="spacing">
+          <number>12</number>
+         </property>
+         <property name="contentsMargins" stdset="0">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>0</width>
+           <height>0</height>
+          </rect>
+         </property>
+         <item>
+          <widget class="QGroupBox" name="groupBox_11">
+           <property name="title">
+            <string>人脸识别</string>
+           </property>
+           <layout class="QHBoxLayout">
+            <property name="spacing">
+             <number>16</number>
+            </property>
+            <property name="contentsMargins" stdset="0">
+             <rect>
+              <x>16</x>
+              <y>16</y>
+              <width>16</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <item>
+             <layout class="QVBoxLayout">
+              <property name="spacing">
+               <number>10</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_11">
+                <property name="minimumSize">
+                 <size>
+                  <width>360</width>
+                  <height>280</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap>C:/Users/liu/Pictures/F7A1EDA62C651FF02CC757D404774CC6.png</pixmap>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_51">
+                <property name="text">
+                 <string>方式一：图片</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout">
+                <item>
+                 <widget class="QPushButton" name="pushButton_39">
+                  <property name="text">
+                   <string>上传图片</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="lineEdit_24"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_52">
+                <property name="text">
+                 <string>方式二：摄像头</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout">
+                <item>
+                 <widget class="QPushButton" name="pushButton_40">
+                  <property name="text">
+                   <string>开启摄像头</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_41">
+                  <property name="text">
+                   <string>关闭摄像头</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame_6">
+              <property name="minimumSize">
+               <size>
+                <width>320</width>
+                <height>0</height>
+               </size>
+              </property>
+              <layout class="QVBoxLayout">
+               <property name="spacing">
+                <number>12</number>
+               </property>
+               <property name="contentsMargins" stdset="0">
+                <rect>
+                 <x>20</x>
+                 <y>20</y>
+                 <width>20</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_28">
+                 <property name="minimumSize">
+                  <size>
+                   <width>50</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>识别结果</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPlainTextEdit" name="plainTextEdit_4"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_10">
+        <layout class="QVBoxLayout">
+         <property name="spacing">
+          <number>12</number>
+         </property>
+         <property name="contentsMargins" stdset="0">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>0</width>
+           <height>0</height>
+          </rect>
+         </property>
+         <item>
+          <widget class="QGroupBox" name="groupBox_12">
+           <property name="title">
+            <string>数据库管理</string>
+           </property>
+           <layout class="QVBoxLayout">
+            <property name="spacing">
+             <number>12</number>
+            </property>
+            <property name="contentsMargins" stdset="0">
+             <rect>
+              <x>16</x>
+              <y>16</y>
+              <width>16</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <item>
+             <layout class="QHBoxLayout">
+              <property name="spacing">
+               <number>8</number>
+              </property>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_25">
+                <property name="placeholderText">
+                 <string>输入姓名/学号查询</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_42">
+                <property name="text">
+                 <string>查询</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_43">
+                <property name="text">
+                 <string>刷新</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_44">
+                <property name="text">
+                 <string>删除</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTableView" name="tableView"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
